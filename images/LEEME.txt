@@ -1,0 +1,4 @@
+Carpeta para las imágenes del sitio.
+
+Guardá acá las fotos del local, colecciones y productos.
+Consultá el README.md para ver qué nombre darle a cada archivo.
