@@ -58,10 +58,21 @@ nav {
 .hero-float-t span { font-size:.72rem; color:var(--text-soft); }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
 
-.brands { background:var(--rosa-deep); padding:1.1rem 3.5rem; display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; }
-.brands-lbl { font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.5); }
-.brands-sep { color:rgba(255,255,255,.25); }
-.brand-n { font-family:'Playfair Display',serif; font-style:italic; font-size:.95rem; color:white; }
+.ticker-wrap { background:var(--rosa-deep); overflow:hidden; padding:.85rem 0; }
+.ticker-track {
+  display:inline-flex; align-items:center; gap:0;
+  white-space:nowrap;
+  animation: ticker 38s linear infinite;
+}
+.ticker-wrap:hover .ticker-track { animation-play-state:paused; }
+.ti { font-size:.82rem; padding:0 .6rem; }
+.ti.brand { font-family:'Playfair Display',serif; font-style:italic; font-size:.95rem; color:white; }
+.ti.data { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.65); }
+.ti.sep { color:rgba(255,255,255,.3); font-size:.7rem; }
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 .sec { padding:6rem 5rem; }
 .sec-h { text-align:center; margin-bottom:3.5rem; }
@@ -186,7 +197,6 @@ footer p { font-size:.72rem; color:rgba(255,255,255,.3); }
     <h1 class="hero-title fi fi1">Linda &amp; <em>Cómoda</em><br>en La Plata</h1>
     <p class="hero-sub fi fi2">32 años acompañando a la mujer platense. Las mejores marcas de lencería, pijamas y ropa interior — todo en un solo lugar.</p>
     <div class="hero-btns fi fi3">
-      <a href="https://wa.me/542215593527" target="_blank" class="btn-wa"><svg><use href="#ico-wa"/></svg>Consultá ahora</a>
       <a href="#marcas" class="btn-ghost">Ver marcas</a>
     </div>
   </div>
@@ -199,14 +209,44 @@ footer p { font-size:.72rem; color:rgba(255,255,255,.3); }
   </div>
 </section>
 
-<div class="brands">
-  <span class="brands-lbl">Nuestras marcas</span>
-  <span class="brands-sep">·</span><span class="brand-n">Sweet Victorian</span>
-  <span class="brands-sep">·</span><span class="brand-n">Aretha</span>
-  <span class="brands-sep">·</span><span class="brand-n">Promesse</span>
-  <span class="brands-sep">·</span><span class="brand-n">Cocot</span>
-  <span class="brands-sep">·</span><span class="brand-n">Andros</span>
-  <span class="brands-sep">·</span><span class="brand-n">y más</span>
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ti brand">Sweet Victorian</span><span class="ti sep">✦</span>
+      <span class="ti data">32 años en La Plata</span><span class="ti sep">✦</span>
+      <span class="ti brand">Aretha</span><span class="ti sep">✦</span>
+      <span class="ti data">Showroom · Calle 12 e/ 60 y 61</span><span class="ti sep">✦</span>
+      <span class="ti brand">Promesse</span><span class="ti sep">✦</span>
+      <span class="ti data">3 cuotas sin interés</span><span class="ti sep">✦</span>
+      <span class="ti brand">Cocot</span><span class="ti sep">✦</span>
+      <span class="ti data">Atención personalizada</span><span class="ti sep">✦</span>
+      <span class="ti brand">Sol y Oro</span><span class="ti sep">✦</span>
+      <span class="ti data">20% descuento en efectivo</span><span class="ti sep">✦</span>
+      <span class="ti brand">Andros</span><span class="ti sep">✦</span>
+      <span class="ti data">Lencería linda &amp; cómoda</span><span class="ti sep">✦</span>
+      <span class="ti brand">Tutta La Frutta</span><span class="ti sep">✦</span>
+      <span class="ti data">Banco Provincia adherido</span><span class="ti sep">✦</span>
+      <span class="ti brand">Piache Piu</span><span class="ti sep">✦</span>
+      <span class="ti data">Todos los talles</span><span class="ti sep">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ti brand">Sweet Victorian</span><span class="ti sep">✦</span>
+      <span class="ti data">32 años en La Plata</span><span class="ti sep">✦</span>
+      <span class="ti brand">Aretha</span><span class="ti sep">✦</span>
+      <span class="ti data">Showroom · Calle 12 e/ 60 y 61</span><span class="ti sep">✦</span>
+      <span class="ti brand">Promesse</span><span class="ti sep">✦</span>
+      <span class="ti data">3 cuotas sin interés</span><span class="ti sep">✦</span>
+      <span class="ti brand">Cocot</span><span class="ti sep">✦</span>
+      <span class="ti data">Atención personalizada</span><span class="ti sep">✦</span>
+      <span class="ti brand">Sol y Oro</span><span class="ti sep">✦</span>
+      <span class="ti data">20% descuento en efectivo</span><span class="ti sep">✦</span>
+      <span class="ti brand">Andros</span><span class="ti sep">✦</span>
+      <span class="ti data">Lencería linda &amp; cómoda</span><span class="ti sep">✦</span>
+      <span class="ti brand">Tutta La Frutta</span><span class="ti sep">✦</span>
+      <span class="ti data">Banco Provincia adherido</span><span class="ti sep">✦</span>
+      <span class="ti brand">Piache Piu</span><span class="ti sep">✦</span>
+      <span class="ti data">Todos los talles</span><span class="ti sep">✦</span>
+    </div>
+  </div>
 </div>
 
 <section class="sec marcas" id="marcas">
